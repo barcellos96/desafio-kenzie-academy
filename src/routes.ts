@@ -13,7 +13,8 @@ import userUpdateController from "./controllers/User/userUpdateSelf.controller";
 import contactCreateController from "./controllers/Contact/contactCreate.controller";
 import contactListUserController from "./controllers/Contact/contactListUser.controller";
 import contactDeleteSelfController from "./controllers/Contact/contactDeleteSelf.controller";
-import validateContactIdInUserMiddleware from "./middlewares/validateContactIdInUser.middleware";
+import contactUpdateSelfController from "./controllers/Contact/contactUpdateSelf.controller";
+import validateOwnerContactMiddleware from "./middlewares/validateOwnerContact.middleware";
 
 //USER
 routes.post("/users", validateUserCreateMiddleware, userCreateController);
@@ -44,6 +45,14 @@ routes.delete(
   "/users/contacts/:id/:id_contact",
   authUser,
   validateUserIdMiddleware,
+  validateOwnerContactMiddleware,
   contactDeleteSelfController
+);
+routes.patch(
+  "/users/contacts/:id/:id_contact",
+  authUser,
+  validateUserIdMiddleware,
+  validateOwnerContactMiddleware,
+  contactUpdateSelfController
 );
 export default routes;
