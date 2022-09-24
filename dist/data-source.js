@@ -13,9 +13,6 @@ exports.AppDataSource = process.env.NODE_ENV === "test"
     : new typeorm_1.DataSource({
         type: "postgres",
         url: process.env.DATABASE_URL,
-        ssl: process.env.NODE_ENV === "production"
-            ? { rejectUnauthorized: false }
-            : false,
         synchronize: false,
         logging: true,
         entities: process.env.NODE_ENV === "production"
@@ -25,10 +22,3 @@ exports.AppDataSource = process.env.NODE_ENV === "test"
             ? ["dist/src/migrations/*.js"]
             : ["src/migrations/*.ts"],
     });
-exports.AppDataSource.initialize()
-    .then(() => {
-    console.log("Data Source initialized");
-})
-    .catch((err) => {
-    console.error("Error during Data Source initialization", err);
-});

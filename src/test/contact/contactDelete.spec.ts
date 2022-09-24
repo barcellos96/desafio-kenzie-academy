@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm";
 import { AppDataSource } from "../../data-source";
 
-import { app } from "../../app";
+import app from "../../app";
 import request from "supertest";
 
 describe("Teste para metodo PATCH em /users/me/:id", () => {
@@ -9,7 +9,7 @@ describe("Teste para metodo PATCH em /users/me/:id", () => {
 
   const contact1 = {
     name: "Test",
-    email: "victor2@kenzie.com.br",
+    email: "felipe@kenzie.com.br",
     contact: "0000-0000",
   };
 

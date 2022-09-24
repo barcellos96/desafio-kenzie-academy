@@ -3,20 +3,20 @@ import { AppDataSource } from "../../data-source";
 import { AppError } from "../../errors/appError";
 
 import request from "supertest";
-import { app } from "../../app";
+import app from "../../app";
 
 describe("Create an user", () => {
   let connection: DataSource;
 
   const contact1 = {
     name: "Test",
-    email: "victor2@kenzie.com.br",
+    email: "felipe1@kenzie.com.br",
     contact: "0000-0000",
   };
 
   const contact2 = {
     name: "Test 2",
-    email: "victor2@kenzie.com.br",
+    email: "felipe2@kenzie.com.br",
   };
 
   const user = {
