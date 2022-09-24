@@ -1,1 +1,1 @@
-web: node dist/data-source.js
+web: node dist/server.js
