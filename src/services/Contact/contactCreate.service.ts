@@ -13,6 +13,7 @@ const contactCreateService = async ({ id, name, email, contact }: IContact) => {
   if (!user) {
     throw new AppError(404, "Not found user");
   }
+  
   const newContact = new Contact();
   newContact.name = name;
   newContact.email = email;

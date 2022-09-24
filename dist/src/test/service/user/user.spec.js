@@ -12,10 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const data_source_1 = require("../../data-source");
-const appError_1 = require("../../errors/appError");
+const data_source_1 = require("../../../data-source");
+const appError_1 = require("../../../errors/appError");
 const supertest_1 = __importDefault(require("supertest"));
-const app_1 = __importDefault(require("../../app"));
+const app_1 = __importDefault(require("../../../app"));
 describe("Create an user", () => {
     let connection;
     const userTest1 = {

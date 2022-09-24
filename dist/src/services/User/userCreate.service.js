@@ -28,8 +28,9 @@ const userCreateService = ({ name, email, password, phone, }) => __awaiter(void 
     user.email = email;
     user.password = bcrypt_1.default.hashSync(password, 10);
     user.phone = phone;
+    user.created_at = new Date();
     userRepository.create(user);
     yield userRepository.save(user);
-    return user;
+    return Object.assign(Object.assign({}, user), { password: undefined });
 });
 exports.default = userCreateService;

@@ -29,9 +29,6 @@ export class User {
   })
   contacts: Contact[];
 
-  @CreateDateColumn({
-    type: "timestamp",
-    default: () => "CURRENT_TIMESTAMP(6)",
-  })
+  @CreateDateColumn()
   created_at: Date;
 }

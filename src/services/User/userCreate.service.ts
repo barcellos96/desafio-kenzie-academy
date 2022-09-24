@@ -16,6 +16,7 @@ const userCreateService = async ({
   const users = await userRepository.find();
 
   const emailAlreadyExists = users.find((user) => user.email === email);
+
   if (emailAlreadyExists) {
     throw new AppError(400, "Email already exists");
   }
@@ -25,11 +26,12 @@ const userCreateService = async ({
   user.email = email;
   user.password = bcrypt.hashSync(password, 10);
   user.phone = phone;
+  user.created_at = new Date();
 
   userRepository.create(user);
   await userRepository.save(user);
 
-  return user;
+  return { ...user, password: undefined };
 };
 
 export default userCreateService;

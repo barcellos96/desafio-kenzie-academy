@@ -41,10 +41,7 @@ __decorate([
     __metadata("design:type", Array)
 ], User.prototype, "contacts", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)({
-        type: "timestamp",
-        default: () => "CURRENT_TIMESTAMP(6)",
-    }),
+    (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
 ], User.prototype, "created_at", void 0);
 User = __decorate([

@@ -12,8 +12,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const data_source_1 = require("../../data-source");
-const app_1 = __importDefault(require("../../app"));
+const data_source_1 = require("../../../data-source");
+const app_1 = __importDefault(require("../../../app"));
 const supertest_1 = __importDefault(require("supertest"));
 describe("Teste para metodo PATCH em /users/me/:id", () => {
     let connection;

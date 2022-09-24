@@ -1,9 +1,8 @@
 import { DataSource } from "typeorm";
-import { AppDataSource } from "../../data-source";
-import { AppError } from "../../errors/appError";
+import { AppDataSource } from "../../../data-source";
 
 import request from "supertest";
-import app from "../../app";
+import app from "../../../app";
 
 describe("Create an user", () => {
   let connection: DataSource;
