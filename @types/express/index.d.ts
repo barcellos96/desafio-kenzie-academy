@@ -1,5 +1,5 @@
 import * as express from "express";
-import { Contact } from "../../entities/contact.entity";
+import { Contact } from "../../src/entities/contact.entity";
 
 declare global {
   namespace Express {
