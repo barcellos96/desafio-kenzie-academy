@@ -9,5 +9,5 @@ import { AppDataSource } from "./data-source";
     .catch((err) => {
       console.error("Error during Data Source initialization", err);
     });
-  app.listen(3001);
+  app.listen(process.env.PORT || 3000);
 })();
